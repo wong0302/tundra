@@ -11,7 +11,6 @@ let app = {
     },
 
     ready: () => {
-
         app.getTundraAPI();
         app.pages = document.querySelectorAll('.page');
         app.pages[0].classList.add('active');
@@ -87,12 +86,10 @@ let app = {
 
     swipeLeft: (ev) => {
         app.getMoreProfiles();
-        //swiped left... add the class 'goleft' to the element
+        //swiped left... add the class 'left' to the element
         let div = ev.currentTarget;
         console.log('Swiped left on div:', div);
-        div.classList.remove('active');
         div.classList.add('left');
-        div.classList.add('goleft');
         document.querySelector('.overleft').style.display = "block"; 
         //remove the div from its parent element after 0.5s
         setTimeout((function () {
@@ -102,15 +99,12 @@ let app = {
     },
     swipeRight: (ev) => {
         
-        //swiped right... add the class 'goright' to the element
+        //swiped right... add the class 'right' to the element
         let div = ev.currentTarget;
         div.classList.add('right');
         console.log('Swipe right on div', div);
         app.getMoreProfiles();
         let dataID = div.getAttribute('data-id');
-        // div.classList.remove('active');
-        
-        div.classList.add('goright');
         document.querySelector('.overright').style.display = "block";
         //remove the div from its parent element after 0.5s
         setTimeout((function () {
@@ -127,8 +121,6 @@ let app = {
         //session storage
         sessionStorage.setItem(app.profileKey, JSON.stringify(app.savedProfiles));
         console.log("Saving current profile to Session Storage");
-        div.classList.remove('active');
-        
     },
 
     /******************************************
@@ -154,7 +146,7 @@ let app = {
 
             let section = document.querySelector('.homepage');
             let contentDiv = document.createElement('div');
-            contentDiv.setAttribute('class', 'card fixed active');
+            contentDiv.setAttribute('class', 'card fixed');
             contentDiv.setAttribute('data-id', profile.id); 
             section.appendChild(contentDiv);
 
