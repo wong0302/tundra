@@ -101,14 +101,15 @@ let app = {
         }).bind(div), 500);
     },
     swipeRight: (ev) => {
+        
         //swiped right... add the class 'goright' to the element
         let div = ev.currentTarget;
-
+        div.classList.add('right');
         console.log('Swipe right on div', div);
         app.getMoreProfiles();
         let dataID = div.getAttribute('data-id');
-        div.classList.remove('active');
-        div.classList.add('right');
+        // div.classList.remove('active');
+        
         div.classList.add('goright');
         document.querySelector('.overright').style.display = "block";
         //remove the div from its parent element after 0.5s
@@ -126,6 +127,7 @@ let app = {
         //session storage
         sessionStorage.setItem(app.profileKey, JSON.stringify(app.savedProfiles));
         console.log("Saving current profile to Session Storage");
+        div.classList.remove('active');
         
     },
 
@@ -147,10 +149,8 @@ let app = {
 
     createCards: () => {
         console.log('GLOBAL ARRAY:', app.profiles);
-        let newArray = app.profiles.reverse();
-        console.log("Reverse this", newArray);
-        newArray.forEach((profile) => {
-
+        
+        app.profiles.forEach((profile) => {
 
             let section = document.querySelector('.homepage');
             let contentDiv = document.createElement('div');
