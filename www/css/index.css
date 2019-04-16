@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.list-item {
+    background-color: #eee;
+    transition: transform 0.4s linear;   
+}
+
+#save {
+    color: red;
+}
+
+.overlay{
+    display: none;
+}
+
+.page{
+    display: none;
+}
+
+.active{
+    display: block;
+}
