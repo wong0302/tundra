@@ -108,8 +108,7 @@ let app = {
         console.log('Swipe right on div', div);
         app.getMoreProfiles();
         let dataID = div.getAttribute('data-id');
-        // div.classList.remove('active');
-        
+        div.classList.remove('active');
         div.classList.add('goright');
         document.querySelector('.overright').style.display = "block";
         //remove the div from its parent element after 0.5s
@@ -127,7 +126,7 @@ let app = {
         //session storage
         sessionStorage.setItem(app.profileKey, JSON.stringify(app.savedProfiles));
         console.log("Saving current profile to Session Storage");
-        div.classList.remove('active');
+        
         
     },
 
