@@ -90,11 +90,7 @@ let app = {
         let div = ev.currentTarget;
         console.log('Swiped left on div:', div);
         div.classList.add('left');
-<<<<<<< HEAD
         document.querySelector('.overleft').style.display = "block";
-=======
-        document.querySelector('.overleft').style.display = "block"; 
->>>>>>> 7f98355a91bd3a9472f25865fe4676650630bc48
         //remove the div from its parent element after 0.5s
         setTimeout((function () {
             document.querySelector('.overleft').style.display = "none";
@@ -102,11 +98,7 @@ let app = {
         }).bind(div), 500);
     },
     swipeRight: (ev) => {
-<<<<<<< HEAD
        
-=======
-        
->>>>>>> 7f98355a91bd3a9472f25865fe4676650630bc48
         //swiped right... add the class 'right' to the element
         let div = ev.currentTarget;
         div.classList.add('right');
@@ -155,11 +147,7 @@ let app = {
             let section = document.querySelector('.homepage');
             let contentDiv = document.createElement('div');
             contentDiv.setAttribute('class', 'card fixed');
-<<<<<<< HEAD
             contentDiv.setAttribute('data-id', profile.id);
-=======
-            contentDiv.setAttribute('data-id', profile.id); 
->>>>>>> 7f98355a91bd3a9472f25865fe4676650630bc48
             section.appendChild(contentDiv);
  
             let img = document.createElement('img');
