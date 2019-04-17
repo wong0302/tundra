@@ -85,12 +85,12 @@ let app = {
     ******************************************/
  
     swipeLeft: (ev) => {
-        app.getMoreProfiles();
         //swiped left... add the class 'left' to the element
         let div = ev.currentTarget;
         console.log('Swiped left on div:', div);
         div.classList.add('left');
         document.querySelector('.overleft').style.display = "block";
+        app.getMoreProfiles();
         //remove the div from its parent element after 0.5s
         setTimeout((function () {
             document.querySelector('.overleft').style.display = "none";
@@ -98,14 +98,13 @@ let app = {
         }).bind(div), 500);
     },
     swipeRight: (ev) => {
-       
         //swiped right... add the class 'right' to the element
         let div = ev.currentTarget;
         div.classList.add('right');
         console.log('Swipe right on div', div);
-        app.getMoreProfiles();
         let dataID = div.getAttribute('data-id');
         document.querySelector('.overright').style.display = "block";
+        app.getMoreProfiles();
         //remove the div from its parent element after 0.5s
         setTimeout((function () {
             document.querySelector('.overright').style.display = "none";
@@ -128,6 +127,7 @@ let app = {
     ******************************************/
  
     getMoreProfiles: () => {
+        // when array is at 3, run fetch again
         let count = document.querySelector('.homepage').children;
         console.log(count);
         if(count.length < 3) {
